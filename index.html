@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Variables, Functions, Objects</title>
+</head>
+<body>
+  <h2>JavaScript Practice</h2>
+
+  <button onclick="showVariables()">Show Variables</button>
+  <button onclick="calculateFactorial()">Factorial Function</button>
+  <button onclick="showStudent()">Show Student Object</button>
+
+  <p id="output"></p>
+
+  <script>
+    // -----------------------
+    // 1. VARIABLES
+    // -----------------------
+    let name = "Pranavi";   // can change
+    var age = 18;           // older style
+    const Pi = 3.14;        // cannot be reassigned
+
+    function showVariables() {
+      document.getElementById("output").innerHTML =
+        "Name is: " + name + "<br>" +
+        "Age is: " + age + "<br>" +
+        "Pi is: " + Pi + "<br>";
+    }
+
+    // -----------------------
+    // 2. FUNCTIONS
+    // -----------------------
+    function calculateFactorial() {
+      let n = 5;
+      let fact = 1;
+      for (let i = 1; i <= n; i++) {
+        fact = fact * i;
+      }
+      document.getElementById("output").innerHTML =
+        "Factorial of " + n + " is " + fact;
+    }
+
+    // -----------------------
+    // 3. OBJECTS
+    // -----------------------
+    let student = {
+      name: "Pranavi",
+      age: 18,
+      branch: "AI",
+      showInfo: function() {
+        return this.name + " (" + this.age + " years old) - " + this.branch;
+      }
+    };
+
+    function showStudent() {
+      document.getElementById("output").innerHTML = student.showInfo();
+    }
+  </script>
+</body>
+</html>
